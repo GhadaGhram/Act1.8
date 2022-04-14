@@ -1,7 +1,8 @@
-package Streaming.copy;
+package Streamingdemusique;
+import Streaming.MusiqueImpl;
 
 public interface Musique {
 	public void afficher();
-	public void  rechercherAuteur(MusiqueImpl music1,String auteur);
+	public void  verifEgale(MusiqueImpl music1,MusiqueImpl music2);
 
 }
