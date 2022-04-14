@@ -1,5 +1,4 @@
-package Streaming.copy;
-
+package Streamingdemusique;
 import java.util.ArrayList;
 
 public interface PlayListe {
