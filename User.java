@@ -1,5 +1,4 @@
-package Streaming.copy;
-
+package Streamingdemusique;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -9,7 +8,6 @@ public class User {
 	public String pseudo;
 	ArrayList<PlayListeImpl> streaming=new ArrayList<>();
 	
-		
 public User(String nom, String prenom, String pseudo, ArrayList<PlayListeImpl> streaming) {
 		
 	this.nom = nom;
@@ -57,58 +55,44 @@ public String toString() {
 public void uSer() {
 	System.out.println(toString());
 }
-
-public void affichertoutListes(ArrayList<PlayListeImpl> streaming) {
-    for(PlayListeImpl pl: streaming) {
-         System.out.println(pl);}
-            
-}
+         
 	//Recherche par Titre
-		public void rechercherTitre(ArrayList<MusiqueImpl> playliste, String titre) {
-				for(MusiqueImpl musiqueImpl:playliste){
-				if(musiqueImpl.getTitre().equals(titre)) {
-					System.out.println("Ce titre existe"); 
+public MusiqueImpl rechercherTitre(ArrayList<MusiqueImpl> playliste, String titre) {
+		for(MusiqueImpl musiqueImpl:playliste){
+		   if(musiqueImpl.getTitre().equals(titre)) {
+				return musiqueImpl; }
 				}
-				else{
-				   System.out.println("Ce titre n'existe pas");}}}
+				 
+		return null;}
 
 	//Recherche par auteur	
-	public void rechercherAuteur(ArrayList<MusiqueImpl> playliste, String auteur) {
+public MusiqueImpl rechercherAuteur(ArrayList<MusiqueImpl> playliste, String auteur) {
 		for(MusiqueImpl musiqueImpl:playliste){
 			if(musiqueImpl.getAuteur().equals(auteur)) {
-				System.out.println("Cet auteur existe"); 
-			}
-			else{
-			   System.out.println("cet auteur n'existe pas");}}}
+				return musiqueImpl; }
+			} 
+		return null;}
 
 	//Supprimer une musique d'une playliste
-	public void supprimerMusique(ArrayList<MusiqueImpl> playliste, String titre) {
-	    for(MusiqueImpl musiqueImpl: playliste) {
-	         if(musiqueImpl.getTitre().equals(titre)) {
-	            playliste.remove(musiqueImpl);}
+public void supprimerMusique(ArrayList<MusiqueImpl> playliste, String titre) {
+	    for(MusiqueImpl music: playliste) {
+	         if(music.getTitre().equals(titre)) {
+	            playliste.remove(music);
 	            break;}
-	}
+	}}
 	
 	//Trier dans le sens croissant
-	public static Comparator <PlayListeImpl> ComparatorNomCroissant = new Comparator <PlayListeImpl> () {
-
+public static Comparator <PlayListeImpl> ComparatorNomCroissant = new Comparator <PlayListeImpl> () {
 		public int compare( PlayListeImpl e1, PlayListeImpl e2) {
 			return e1.getNomMusique().compareTo(e2.getNomMusique());
 		}
 	};
 
-	//Trier dans le sens déccroissant
-	public static Comparator<PlayListeImpl> ComparatorNomDecroissant = new Comparator<PlayListeImpl>() {
-
+	//Trier dans le sens dÃ©ccroissant
+public static Comparator<PlayListeImpl> ComparatorNomDecroissant = new Comparator<PlayListeImpl>() {
 		@Override
 		public int compare(PlayListeImpl e1, PlayListeImpl e2) {
 			return e2.getNomMusique().compareTo(e1.getNomMusique());
 		}
 	};
-	
-	
-	
-
-	
-	
 }
