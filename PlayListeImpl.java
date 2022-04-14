@@ -1,5 +1,4 @@
-package Streaming.copy;
-
+package Streamingdemusique;
 import java.util.ArrayList;
 
 public  class PlayListeImpl implements PlayListe {
@@ -15,25 +14,6 @@ public PlayListeImpl(String nomMusique, int nombreTitresMusique,
 	this.nombreTitresMusique = nombreTitresMusique;
 	this.playliste = playliste;
 }
-
-
-@Override
-public String toString() {
-	return "PlayListeImpl [playliste=" + playliste + "]";
-}
-
-@Override
-public void afficherPlayListe() {
-		System.out.println(toString());
-}
-	
-@Override
-public void ajouterPlayListe(ArrayList<MusiqueImpl> playliste,MusiqueImpl music) {
-		if (playliste.size()<=MAX_MUSIQUES) {
-		    playliste.add(music);
-	}
-	else { System.out.println("Oups! Espace dans la liste  insuffisant");}}
-
 public String getNomMusique() {
 	return nomMusique;
 }
@@ -51,8 +31,30 @@ public void setNombreTitresMusique(int nombreTitresMusique) {
 	this.nombreTitresMusique = nombreTitresMusique;
 }
 
-	
+
+public ArrayList<MusiqueImpl> getPlayliste() {
+	return playliste;
 }
 
 
+public void setPlayliste(ArrayList<MusiqueImpl> playliste) {
+	this.playliste = playliste;
+}
 
+@Override
+public String toString() {
+	return "PlayListeImpl [playliste=" + playliste + "]";
+}
+
+@Override
+public void afficherPlayListe() {
+		System.out.println(toString());
+}
+	
+@Override
+public void ajouterPlayListe(ArrayList<MusiqueImpl> playliste,MusiqueImpl music) {
+		if (playliste.size()<=MAX_MUSIQUES) {
+		    playliste.add(music);
+	}
+    	else { System.out.println("Oups! Espace dans la liste  insuffisant");}}
+}
