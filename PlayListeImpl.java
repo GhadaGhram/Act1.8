@@ -58,3 +58,8 @@ public void ajouterPlayListe(ArrayList<MusiqueImpl> playliste,MusiqueImpl music)
 	}
     	else { System.out.println("Oups! Espace dans la liste  insuffisant");}}
 }
+
+
+
+
+
