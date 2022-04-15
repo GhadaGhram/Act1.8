@@ -96,3 +96,4 @@ public static Comparator<PlayListeImpl> ComparatorNomDecroissant = new Comparato
 		}
 	};
 }
+	
