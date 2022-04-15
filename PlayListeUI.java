@@ -143,8 +143,8 @@ public class PlayListeUI {
 					System.out.println(playlisteImpl1.getNomMusique() + " ");
 				}
 					
-					storePlaylistFromFile(playliste3);
-				    storePlaylistToFile(playliste3);
+					storePlaylistFromFile(playliste1);
+				    storePlaylistToFile(playliste2);
 				 	
 					System.out.println(streaming.toString());
 				
